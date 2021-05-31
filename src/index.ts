@@ -33,19 +33,26 @@ export class AlgoritmosCompressao {
 			while (caracter === param.charAt(++i)) {
 				repeticoes++;
 			}
-			textoComprimido += repeticoes + caracter;
+			if (repeticoes > 1) {
+				textoComprimido += repeticoes;
+			}
+
+			textoComprimido += caracter;
 		}
+
 		this._logger.debug('Saida: ' + textoComprimido);
 		this._logger.debug('Saida (B): ' + Util.string2bin(textoComprimido));
 		return textoComprimido;
+
 	}
 
-/**
- * Metodo que descomprime uma sequencia de caracteres usando o algoritmo de
- * frequencia de caracteres
- * @param param
- * @returns
- */
+
+	/**
+	 * Metodo que descomprime uma sequencia de caracteres usando o algoritmo de
+	 * frequencia de caracteres
+	 * @param param
+	 * @returns
+	 */
 	public descomprimeFequenciaCaractere(param: string): string {
 		this._logger.debug('Received: ' + param);
 		let i = 0;
