@@ -59,7 +59,7 @@ export class AlgoritmosCompressao {
 		// fazer loop em todos os caracteres da string de entrada
 		while (i < param.length) {
 			let j: number = 0;
-			while (+(Number(param.substring(i, i + j + 1)))) {
+			while (!isNaN(Number(param.substring(i, i + j + 1)))) {
 				j++;
 			}
 			const numeroRepeticoes: number = Number(param.substring(i, i + j)).valueOf();
