@@ -32,9 +32,9 @@ describe('AlgoritmosCompressao class', () => {
 
 	it('Testa o metodo descomprimeFequenciaCaractere com o texto 1A2B12C', () => {
 		const example: AlgoritmosCompressao = new AlgoritmosCompressao();
-		const param: string = '1A2B2C';
+		const param: string = '1A2B12C';
 		const returnValue: string = example.descomprimeFequenciaCaractere(param);
-		expect(returnValue).to.equal('ABBCC', 'returns the value passed as a parameter');
+		expect(returnValue).to.equal('ABBCCCCCCCCCCCC', 'returns the value passed as a parameter');
 	});
 	it('Testa o metodo descomprimeFequenciaCaractere com o texto 10A2B2C', () => {
 		const example: AlgoritmosCompressao = new AlgoritmosCompressao();
@@ -54,11 +54,17 @@ describe('AlgoritmosCompressao class', () => {
 		const returnValue: string = example.descomprimeFequenciaCaractere(param);
 		expect(returnValue).to.equal('A', 'returns the value passed as a parameter');
 	});
-	it('Testa o metodo descomprimeFequenciaCaractere com o texto 1A100B', () => {
+	it('Testa o metodo descomprimeFequenciaCaractere com o texto 1A1B1C1D', () => {
 		const example: AlgoritmosCompressao = new AlgoritmosCompressao();
-		const param: string = '1A90B';
+		const param: string = '1A1B1C1D';
 		const returnValue: string = example.descomprimeFequenciaCaractere(param);
-		expect(returnValue).to.equal('ABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', 'returns the value passed as a parameter');
+		expect(returnValue).to.equal('ABCD', 'returns the value passed as a parameter');
+	});
+	it('Testa o metodo comprimeFequenciaCaractere com o texto ABCD ', () => {
+		const example: AlgoritmosCompressao = new AlgoritmosCompressao();
+		const param: string = 'ABCD';
+		const returnValue: string = example.comprimeFequenciaCaractere(param);
+		expect(returnValue).to.equal('ABCD', 'returns the value passed as a parameter');
 	});
 
 });

@@ -54,21 +54,21 @@ export class AlgoritmosCompressao {
 	 * @returns
 	 */
 	public descomprimeFequenciaCaractere(param: string): string {
-		this._logger.debug('Received: ' + param);
 		let i = 0;
 		let textoDescomprimido: string = '';
 		// fazer loop em todos os caracteres da string de entrada
 		while (i < param.length) {
 			let j: number = 0;
-			while (!isNaN(Number(param.substring(i, i + j + 1)))) {
+			while (+(Number(param.substring(i, i + j + 1)))) {
 				j++;
 			}
 			const numeroRepeticoes: number = Number(param.substring(i, i + j)).valueOf();
 			i = i + j;
 			const caracter = param.charAt(i);
-			let index = 0;
-			for (; index < numeroRepeticoes; index++) {
+			for (let index = 0; index < numeroRepeticoes; index++) {
+				if(numeroRepeticoes){
 				textoDescomprimido = textoDescomprimido + caracter;
+				}
 			}
 			i++;
 		}
